@@ -5,25 +5,25 @@ const IMAGE_URL = 'https://api.thecatapi.com/v1/images';
 const API_KEY ='live_FdT5JfZLkXKoYCUW80F573ja9QfnKV5d9PDAhaxZruV49sGpRQifSKIs9SV9HFPx';
 
 
-function fetchBreeds() {
-  return fetch('${BREED_URL}?api_key=${API_KEY}').thet(resp => {
-    if (!resp.ok) {
-      throw new Eror(resp.statusText);
-    }
-    return resp.json();
-  });
-}
+const fetchBreeds = () => {
+    return fetch(`${BREED_URL}?api_key=${API_KEY}`).then(responce => {
+      if (!responce.ok) {
+        throw new Error(resp.status);
+      }
+      return responce.json();
+    });
+  };
 
 
-function fetchCatByBreed(breedId) {
-    return fetch('${BREED_URL}/${breedId}?api_key=${API_KEY}').thet(resp => {
-        if (!resp.ok) {
-          throw new Eror(resp.statusText);
-        }
-        return resp.json();
-      });
-    }
-
+const fetchCatByBreed = breedId => {
+    return fetch(`${IMAGE_URL}/${breedId}?api_key=${API_KEY}`).then(responce => {
+      if (!responce.ok) {
+        throw new Error(resp.status);
+      }
+      return responce.json();
+    });
+  };
+  
 
 
 export {fetchBreeds, fetchCatByBreed};
