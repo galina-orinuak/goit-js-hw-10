@@ -29,6 +29,7 @@ function onChangeSelect(evt){
         Notiflix.Notify.failure( 'Oops! Something went wrong! Try reloading the page!');
     })
     .finally(() => loader.classList.add('unvisible'))
+   
     }
 
     
@@ -66,8 +67,10 @@ new SlimSelect({
         );
       })
       .finally(() => {
-        loader.classList.add('unvisible');
-        catSelect.classList.remove('unvisible');
+  
+      loader.classList.add('unvisible');
+      catSelect.classList.remove('unvisible');
+        
       });
     }
 
